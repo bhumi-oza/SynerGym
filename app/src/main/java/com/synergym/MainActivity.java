@@ -4,7 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -50,8 +54,16 @@ public class MainActivity extends Activity {
         ((MyApplication) getApplication()).getNetComponent().inject(this);
 
         newslist = new ArrayList<>();
-        recyclerView = findViewById(R.id.recycler_view);
-        rootLayout = findViewById(R.id.rootLayout);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        rootLayout = (LinearLayout) findViewById(R.id.rootLayout);
+
+        View includedLayout = findViewById(R.id.toolbar);
+        TextView toolbartxtTitle = (TextView) includedLayout.findViewById(R.id.toolbartxtTitle);
+        ImageView backBtn = (ImageView)includedLayout. findViewById(R.id.ivBackButton);
+
+        toolbartxtTitle.setVisibility(View.VISIBLE);
+        backBtn.setVisibility(View.GONE);
+
         RecyclerView.LayoutManager manager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 

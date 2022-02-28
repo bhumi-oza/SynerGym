@@ -6,8 +6,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -79,11 +81,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.CustomViewHold
                     .into(customViewHolder.ivImage);
         }
 
-        customViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+        customViewHolder.frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(context, DetailActivity.class);
                 intent.putExtra("LIST", (Serializable) lists);
+                intent.putExtra("POS", i);
+                context.startActivity(intent);
 
             }
         });
@@ -109,5 +114,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.CustomViewHold
         TextView txtTitle = itemView.findViewById(R.id.txtTitle);
         TextView txtSrc = itemView.findViewById(R.id.txtSrc);
         CardView cardView = itemView.findViewById(R.id.cardView);
+        FrameLayout frameLayout = itemView.findViewById(R.id.frameLayout);
     }
 }
