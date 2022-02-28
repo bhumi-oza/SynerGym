@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso;
 import com.synergym.DetailActivity;
 import com.synergym.R;
 import com.synergym.model.ArticlesItem;
+import com.synergym.utils.Const;
 
 import java.io.Serializable;
 import java.text.DateFormat;
@@ -60,17 +61,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.CustomViewHold
         }
 
         if (lists.get(i).getAuthor() != null && lists.get(i).getPublishedAt() != null) {
-           /* DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-            Date date = null;//You will get date object relative to server/client timezone wherever it is parsed
-            try {
-                date = dateFormat.parse(lists.get(i).getPublishedAt() + "");
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); //If you need time just put specific format for time like 'HH:mm:ss'
-            String dateStr = formatter.format(date);*/
 
-            customViewHolder.txtSrc.setText(lists.get(i).getAuthor().toString() + "  " + lists.get(i).getPublishedAt());
+            customViewHolder.txtSrc.setText(lists.get(i).getAuthor().toString() + "  " + Const.changeDateFormate(lists.get(i).getPublishedAt().toString()));
             customViewHolder.txtSrc.setTypeface(Typer.set(context).getFont(Font.ROBOTO_BOLD));
         }
 

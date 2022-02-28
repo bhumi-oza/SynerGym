@@ -9,8 +9,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.synergym.model.ArticlesItem;
+import com.synergym.utils.Const;
 
 import java.util.ArrayList;
+
+import okhttp3.internal.Util;
 
 public class DetailActivity extends Activity {
 
@@ -47,14 +50,14 @@ public class DetailActivity extends Activity {
         // txtTitle.setTypeface(Typer.set(context).getFont(Font.ROBOTO_BOLD));
 
 
-        txtSrc.setText(articlesItems.get(pos).getAuthor().toString() + "  " + articlesItems.get(pos).getPublishedAt());
+        txtSrc.setText(articlesItems.get(pos).getAuthor().toString() );
         //  txtSrc.setTypeface(Typer.set(context).getFont(Font.ROBOTO_BOLD));
 
 
         txtDesc.setText(articlesItems.get(pos).getDescription().toString().toString());
         //  txtSrc.setTypeface(Typer.set(context).getFont(Font.ROBOTO_BOLD));
 
-        txtDate.setText(articlesItems.get(pos).getPublishedAt().toString());
+        txtDate.setText(Const.changeDateFormate(articlesItems.get(pos).getPublishedAt().toString())+"");
         //  txtSrc.setTypeface(Typer.set(context).getFont(Font.ROBOTO_BOLD));
 
 

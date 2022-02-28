@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="42dp"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
     <ImageView
         android:id="@+id/ivBackButton"
         android:layout_width="42dp"
         android:layout_height="42dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/circle"
+        android:padding="10dp"
         android:src="@drawable/ic_back_arrow"
-        android:visibility="visible"
-android:padding="10dp"        android:layout_marginStart="10dp"
-        android:background="@drawable/circle"/>
+        android:visibility="visible" />
+
     <TextView
         android:id="@+id/toolbartxtTitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="HEADLINES"
-        android:textSize="29sp"
-        android:textColor="#ffffff"
+        android:background="#000000"
         android:gravity="center"
-        android:background="#000000"/>
+        android:text="HEADLINES"
+        android:textColor="#ffffff"
+        android:textSize="29sp" />
 
 </LinearLayout>
